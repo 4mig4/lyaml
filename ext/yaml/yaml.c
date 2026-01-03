@@ -57,7 +57,11 @@ luaopen_yaml (lua_State *L)
    parser_init (L);
    scanner_init (L);
 
+#if LUA_VERSION_NUM >= 502
+   luaL_newlib(L, R);
+#else
    luaL_register(L, "yaml", R);
+#endif
 
    lua_pushliteral(L, MYVERSION);
    lua_setfield(L, -2, "version");
