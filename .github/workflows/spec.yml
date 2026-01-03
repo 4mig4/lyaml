@@ -18,11 +18,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: leafo/gh-actions-lua@v8.0.0
+      - uses: leafo/gh-actions-lua@v12
         with:
           luaVersion: ${{ matrix.lua-version }}
 
-      - uses: leafo/gh-actions-luarocks@v4.0.0
+      - uses: leafo/gh-actions-luarocks@v6
 
       - name: install
         run: |
